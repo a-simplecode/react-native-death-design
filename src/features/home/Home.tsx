@@ -3,6 +3,7 @@ import styles from './HomeStyles';
 import type {PropsWithChildren} from 'react';
 
 import {
+  Button,
   FlatList,
   SafeAreaView,
   ScrollView,
@@ -64,7 +65,7 @@ function Section({children, title}: SectionProps): JSX.Element {
   );
 }
 
-const Home: React.FC = () => {
+const Home: React.FC<any> = ({navigation}) => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -80,6 +81,10 @@ const Home: React.FC = () => {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
+        <Button
+          title="Go to Profile"
+          onPress={() => navigation.navigate('Profile')}
+        />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
