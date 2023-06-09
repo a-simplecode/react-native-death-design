@@ -13,6 +13,7 @@ function App(): JSX.Element {
       SplashScreen.hide();
     }, 1000);
   }, []);
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
